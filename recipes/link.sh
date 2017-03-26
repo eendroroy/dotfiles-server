@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOTFILES="`pwd`/`uname` `pwd`/common"
+DOTFILES="`pwd`"
 
 echo -e "\nCreating symlinks"
 echo "=============================="
@@ -23,7 +23,7 @@ if [ ! -d $HOME/.config ]; then
 	mkdir -p $HOME/.config
 fi
 
-for config in `pwd`/`uname`/config/*; do
+for config in `pwd`/config/*; do
 	target=$HOME/.config/$( basename $config )
 	if [ -e $target ]; then
         	echo "~{$target#$HOME} already exists... Skipping."
